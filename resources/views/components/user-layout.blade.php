@@ -85,5 +85,6 @@
             <p class="text-sm text-gray-600">© 2023 DSMS. All rights reserved.</p>
         </footer>
 </body>
-
+@livewireScripts
+@include('sweetalert::alert')
 </html>

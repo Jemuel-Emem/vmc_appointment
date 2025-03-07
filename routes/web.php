@@ -2,6 +2,7 @@
 use App\Http\Middleware\admin;
 use App\Http\Middleware\student ;
 use App\Http\Controllers\AuthController;
+use App\Http\Middleware\staffs;
 use App\View\Components\staff;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -58,10 +59,14 @@ Route::prefix('student')->middleware(['auth', student::class])->group(function (
 
 });
 
-Route::prefix('staff')->middleware(['auth', staff::class])->group(function () {
-    Route::get('/dashboard', function () {
+Route::prefix('staffs')->middleware(['auth', staffs::class])->group(function () {
+    Route::get('/staffdashboard', function () {
         return view('staff.index');
     })->name('staffdashboard');
+
+    Route::get('/staff.appointments', function () {
+        return view('staff.appointments');
+    })->name('staff.appointments');
 
 
     // Route::post('/logout', function () {

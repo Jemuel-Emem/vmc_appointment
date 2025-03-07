@@ -15,7 +15,8 @@
     <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
     rel="stylesheet"/>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <style>
         [x-cloak] {
             display: none;
@@ -27,7 +28,7 @@
     @livewireStyles
 </head>
 
-<body class="font-sans antialiased bg-fuchsia-700  relative">
+<body class="font-sans antialiased relative bg-gray-700">
     {{-- <x-notifications position="top-right" />
     <x-dialog z-index="z-50" blur="md" align="center" /> --}}
     <button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar"
@@ -45,12 +46,12 @@
     <aside id="sidebar-multi-level-sidebar"
         class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar">
-        <div class="h-full px-3 py-4 overflow-y-auto bg-fuchsia-900 ">
+        <div class="h-full px-3 py-4 overflow-y-auto  ">
             <ul class="space-y-2 font-medium ">
-                <a href="ds">
+                <a href="">
                     <div class="flex  flex-col items-center h-full px-3  overflow-y-auto  ">
                         <div class="">
-                            <img src="{{ asset('images/steak.png') }}" alt="Violation Photo" class="w-12 h-12 ">
+                            <img src="{{ asset('images/icon_vmc.png') }}" alt="Violation Photo" class="w-12 h-12 ">
                         </div>
                           <div class="text-center mt-2">
                              <label for="" class="font-black text-white text-xl">DSMS</label>
@@ -58,12 +59,21 @@
                      </div>
                 </a>
                 <li>
-                    <a href="{{ route('admin-dashboard') }}"
+                    <a href=""
                         class="flex items-center p-2 text-white hover:text-black rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <i class="ri-dashboard-fill"></i>
                         <span class="ms-3">Dashboard</span>
                     </a>
                 </li>
+
+                <li>
+                    <a href="{{route('staff.appointments')}}"
+                        class="flex items-center p-2 text-white hover:text-black rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <i class="ri-file-list-fill"></i>
+                        <span class="ms-3">Appointments</span>
+                    </a>
+                </li>
+
 
 
             </ul>
@@ -77,20 +87,19 @@
 
     <div class="flex justify-end text-black  mr-10 mt-4">
         <div>
-            <x-dropdown>
-                <x-slot name="trigger">
 
-                    <x-avatar xs squared src="https://cdn-icons-png.flaticon.com/512/6897/6897018.png" class="w-12 h-12"/>
-                </x-slot>
 
-                <x-dropdown.item label="{{ Auth::user()->name }}" />
-                <x-dropdown.item separator label="Logout" href="{{  route('logout') }}"/>
-            </x-dropdown>
+                <a href="{{route('logout')}}"
+                    class="flex items-center p-2 text-white hover:text-black rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="ri-logout-circle-fill text-red-500"></i>
+                    <span class="ms-3">Logout</span>
+                </a>
+
 
         </div>
       </div>
     <div class="p-4 sm:ml-64">
-        <div class="p-4  border-gray-200  rounded-lg dark:border-gray-700 ">
+        <div class="p-4  bg-gray-200 ">
             <main>
                 {{ $slot }}
             </main>

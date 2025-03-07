@@ -3,6 +3,7 @@
 namespace App\Livewire\Student;
 use App\Models\appointment as app;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 use Livewire\Component;
 
 class Appointment extends Component
@@ -28,8 +29,8 @@ class Appointment extends Component
             'request_type' => $this->request_type,
             'status' => 'pending',
         ]);
+        flash()->success('Your appointment request has been submitted.');
 
-        session()->flash('message', 'Appointment request submitted successfully.');
         $this->reset();
     }
 

@@ -5,9 +5,9 @@
         <h1 class="text-4xl font-bold text-blue-800 mb-4">Appoint Documents to VMC</h1>
         <p class="text-lg text-gray-700 mb-6">Streamline your document submission and tracking process with DSMS.</p>
         <div class="flex justify-center space-x-4">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-               Appoint Now
-            </button>
+        <a href="{{route('student.appointment')}}">    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Appoint Now
+         </button></a>
             <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                 Track Appointment
             </button>

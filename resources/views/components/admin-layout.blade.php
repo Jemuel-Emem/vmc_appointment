@@ -59,11 +59,17 @@
                      </div>
                 </a>
                 <li>
-                    <a href=""
+                    <a href="{{route('Admindashboard')}}"
                         class="flex items-center p-2 text-white hover:text-black rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <i class="ri-dashboard-fill"></i>
                         <span class="ms-3">Dashboard</span>
                     </a>
+
+                    <a href="{{route('admin.approved-appointemnts')}}"
+                    class="flex items-center p-2 text-white hover:text-black rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="ri-dashboard-fill"></i>
+                    <span class="ms-3">Appointments</span>
+                </a>
                 </li>
 
 

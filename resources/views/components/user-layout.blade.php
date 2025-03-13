@@ -53,14 +53,14 @@
 
 
                 <li>
-                    <a href=""  class="block py-2 px-3 text-white uppercase font-bold  rounded md:bg-transparent  md:p-0 dark:text-gray-400 md:dark:text-blue-500 hover:text-gray-600" aria-current="page">Home</a>
+                    <a href="{{route('user-dashboard')}}"  class="block py-2 px-3 text-white uppercase font-bold  rounded md:bg-transparent  md:p-0 dark:text-gray-400 md:dark:text-blue-500 hover:text-gray-600" aria-current="page">Home</a>
                   </li>
                 <li>
                     <a href="{{route('student.appointment')}}"  class="block py-2 px-3 text-white uppercase font-bold  rounded md:bg-transparent  md:p-0 dark:text-gray-400 md:dark:text-blue-500 hover:text-gray-600" aria-current="page">Appointment</a>
                 </li>
 
                 <li>
-                    <a href=""  class="block py-2 px-3 text-white uppercase font-bold  rounded md:bg-transparent  md:p-0 dark:text-gray-400 md:dark:text-blue-500 hover:text-gray-600" aria-current="page">Status</a>
+                    <a href="{{route('student.appointment-status')}}"  class="block py-2 px-3 text-white uppercase font-bold  rounded md:bg-transparent  md:p-0 dark:text-gray-400 md:dark:text-blue-500 hover:text-gray-600" aria-current="page">Status</a>
                 </li>
               <li>
                 <a href="{{ route('logout') }}" class="block py-2 px-3 underline text-red-500 uppercase font-bold  bg-blue-700 rounded md:bg-transparent  md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">

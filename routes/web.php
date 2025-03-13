@@ -28,6 +28,10 @@ Route::prefix('admin')->middleware(['auth', admin::class])->group(function () {
         return view('admin.index');
     })->name('Admindashboard');
 
+    Route::get('/approved-appointemnts', function () {
+        return view('admin.approved-appointments');
+    })->name('admin.approved-appointemnts');
+
     Route::get('/uploads', function () {
         return view('admin.upload');
     })->name('uploadss');
@@ -50,6 +54,11 @@ Route::prefix('student')->middleware(['auth', student::class])->group(function (
     Route::get('/appointment', function () {
         return view('student.appointment');
     })->name('student.appointment');
+
+
+    Route::get('/appointment-status', function () {
+        return view('student.appointment-status');
+    })->name('student.appointment-status');
 
 
     // Route::post('/logout', function () {

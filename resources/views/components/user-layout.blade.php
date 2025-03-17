@@ -20,18 +20,37 @@
         [x-cloak] {
             display: none;
         }
+
+        .custom-flash-message {
+    text-align: center;
+    font-size: 16px;
+    padding: 15px;
+}
+
+.flasher-container {
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    position: fixed !important;
+    z-index: 9999 !important;
+}
+
     </style>
 
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     {{-- @wireUiScripts --}}
-
+    @livewireStyles
+    @flasher_render
 
 </head>
 
 <body class="font-sans antialiased   bg-no-repeat bg-gray-700">
-     {{-- @livewireScripts
-    <x-dialog /> --}}
+     {{-- @livewireScripts --}}
+    {{-- <x-dialog />  --}}
+
+
+
     <nav class="bg-bermuda border-gray-200 dark:bg-gray-900 ">
 
         <div class=" flex flex-wrap items-center justify-between mx-auto p-4">
@@ -85,6 +104,7 @@
             <p class="text-sm text-gray-600">© 2023 DSMS. All rights reserved.</p>
         </footer>
 </body>
+
 @livewireScripts
 @include('sweetalert::alert')
 </html>

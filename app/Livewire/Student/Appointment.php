@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Livewire\Student;
-use App\Models\appointment as app;
+
+use App\Models\appointment as App;
 use Illuminate\Support\Facades\Auth;
-use RealRashid\SweetAlert\Facades\Alert;
 use Livewire\Component;
+use Flasher\Laravel\Facade\Flasher;
+
 
 class Appointment extends Component
 {
@@ -20,7 +22,7 @@ class Appointment extends Component
             'request_type' => 'required|in:Form137,Form138,TOR',
         ]);
 
-        App::create([
+        $appointment = App::create([
             'user_id' => Auth::id(),
             'name' => $this->name,
             'address' => $this->address,
@@ -29,7 +31,15 @@ class Appointment extends Component
             'request_type' => $this->request_type,
             'status' => 'pending',
         ]);
-        flash()->success('Your appointment request has been submitted.');
+
+
+        Flasher::addSuccess("
+            <strong>📄 Appointment Slip</strong><br>
+            Name: {$appointment->name}<br>
+            Appointment ID: {$appointment->id}<br>
+            Request Type: {$appointment->request_type}<br>
+            📸 <strong>Please take a screenshot before closing.</strong>
+        ", ['timeout' => 0]); // Timeout 0 makes it stay until user closes it
 
         $this->reset();
     }

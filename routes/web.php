@@ -25,12 +25,17 @@ Route::middleware(['auth'])->group(function () {
 
 Route::prefix('admin')->middleware(['auth', admin::class])->group(function () {
     Route::get('/Admindashboard', function () {
-        return view('admin.index');
+        return view('admin.indexx');
     })->name('Admindashboard');
 
     Route::get('/approved-appointemnts', function () {
         return view('admin.approved-appointments');
     })->name('admin.approved-appointemnts');
+
+    Route::get('/add_staff', function () {
+        return view('admin.add_staff');
+    })->name('admin.add_staff');
+
 
     Route::get('/uploads', function () {
         return view('admin.upload');
@@ -76,6 +81,10 @@ Route::prefix('staffs')->middleware(['auth', staffs::class])->group(function () 
     Route::get('/staff.appointments', function () {
         return view('staff.appointments');
     })->name('staff.appointments');
+
+    Route::get('/staff.approved_appointments', function () {
+        return view('staff.approved_appointment');
+    })->name('staff.approved_appointments');
 
 
     // Route::post('/logout', function () {

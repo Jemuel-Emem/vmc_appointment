@@ -10,13 +10,13 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
     <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
     rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+
     <style>
         [x-cloak] {
             display: none;
@@ -70,6 +70,12 @@
                     <i class="ri-dashboard-fill"></i>
                     <span class="ms-3">Appointments</span>
                 </a>
+
+                <a href="{{route('admin.add_staff')}}"
+                class="flex items-center p-2 text-white hover:text-black rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <i class="ri-account-box-fill"></i>
+                <span class="ms-3">Staff</span>
+            </a>
                 </li>
 
 
@@ -105,7 +111,7 @@
     </div>
 
 
-
+    @livewireScripts
 </body>
 
 </html>

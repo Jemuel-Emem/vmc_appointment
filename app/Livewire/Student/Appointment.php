@@ -39,7 +39,7 @@ class Appointment extends Component
             Appointment ID: {$appointment->id}<br>
             Request Type: {$appointment->request_type}<br>
             📸 <strong>Please take a screenshot before closing.</strong>
-        ", ['timeout' => 0]); // Timeout 0 makes it stay until user closes it
+        ", ['timeout' => 0]);
 
         $this->reset();
     }
